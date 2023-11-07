@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Azure Bot Integration</title>
+</head>
+<body>
+    <div id="webchat" role="main"></div>
+    <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
+    <script>
+        window.WebChat.renderWebChat(
+            {
+                directLine: window.WebChat.createDirectLine({ secret: '0m1qkOXyfCE.zqGyLweub8jIcbJRZI64UA7r7avVsjHgZLyeTHf0KQg' }),
+            },
+            document.getElementById('webchat')
+        );
+    </script>
+</body>
+</html>

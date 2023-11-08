@@ -6,6 +6,11 @@ This is a web-based application developed for a seamless consulting healthcare w
 
 
 **Project Link**: https://828-kalyan.github.io/Hospital-website1/
+Project Demo Video Link: https://www.youtube.com/watch?v=a4jD-sHJbDU
+
+Azure Technologies used for the project:
+Static web apps
+Health bot
 
 
 ## Features and Functionalities 😃

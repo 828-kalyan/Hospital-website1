@@ -9,8 +9,8 @@ This is a web-based application developed for a seamless consulting healthcare w
 Project Demo Video Link: https://www.youtube.com/watch?v=a4jD-sHJbDU
 
 Azure Technologies used for the project:
-. static web apps
-. Health bot
+Static web apps,
+Health bot
 
 
 ## Features and Functionalities 😃

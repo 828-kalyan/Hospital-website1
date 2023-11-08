@@ -51,8 +51,8 @@ The user can learn about health information through the latest health blogs.
 
 ## Tech Stack 💻
 
-- [Azure(Hosting)](https://azure.microsoft.com/en-in/features/azure-portal/)
+- [Azure(Hosting)](https://green-stone-0ae2a9210.4.azurestaticapps.net/)
 - HTML
 - CSS
 - Bootstrap
-- JavaScript[tpcolor=#FF8C00][/tpcolor]
+- JavaScript

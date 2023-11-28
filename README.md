@@ -5,7 +5,7 @@ This is a web-based application developed for a seamless consulting healthcare w
 ### This web-based healthcare application has been developed for the accomplishment of the Future Ready Talent Internship program launched by Microsoft, Future Skills Prime, Quess, Github, and EY.
 
 
-**Project Link**: https://828-kalyan.github.io/Hospital-website1/
+**Project Link**: https://green-stone-0ae2a9210.4.azurestaticapps.net/
 Project Demo Video Link: https://www.youtube.com/watch?v=a4jD-sHJbDU
 
 Azure Technologies used for the project:

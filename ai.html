@@ -1,0 +1,61 @@
+
+          
+
+
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Document Intelligence</title>
+            </head>
+            <body>
+                <h1>Document Intelligence</h1>
+                
+                <form id="documentForm">
+                    <label for="document">Choose a document:</label>
+                    <input type="file" id="document" accept=".pdf, .docx, .pptx">
+                    <button type="button" onclick="analyzeDocument()">Analyze Document</button>
+                </form>
+            
+                <div id="result"></div>
+            
+                <script>
+                    function analyzeDocument() {
+                        const documentInput = document.getElementById('document');
+                        const documentFile = documentInput.files[0];
+            
+                        if (!documentFile) {
+                            alert('Please choose a document.');
+                            return;
+                        }
+            
+                        const apiUrl = https://crt.cognitiveservices.azure.com/;
+                        
+                        const apiKey = 1067a4d0fc074cf69ef033b5aa79fef5;
+            
+                        const formData = new FormData();
+                        formData.append('file', documentFile);
+            
+                        fetch(apiUrl, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/octet-stream',
+                                'Ocp-Apim-Subscription-Key': apiKey,
+                            },
+                            body: formData.get('file'),
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            const resultDiv = document.getElementById('result');
+                            resultDiv.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            alert('An error occurred. Please try again.');
+                        });
+                    }
+                </script>
+            </body>
+            </html>
+            

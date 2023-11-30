@@ -10,7 +10,7 @@ Project Demo Video Link: https://www.youtube.com/watch?v=a4jD-sHJbDU
 
 Azure Technologies used for the project:
  ### Static web apps
- ### ealth bot
+ ### Health bot
  ### Azure AI Services
 
 ## Features and Functionalities 😃

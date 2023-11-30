@@ -3,98 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document Intelligence</title>
+    <title>Language Translator</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
         }
 
         h1 {
             color: #333;
         }
 
-        #documentForm {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
         label {
-            margin-bottom: 10px;
-            color: #333;
+            display: block;
+            margin: 10px 0;
         }
 
-        #document {
+        textarea {
+            width: 100%;
+            height: 100px;
+            resize: none;
             margin-bottom: 10px;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
         }
 
         button {
-            padding: 10px;
-            background-color: #007BFF;
-            color: #fff;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
             border: none;
+            border-radius: 5px;
             cursor: pointer;
         }
 
-        #result {
+        #translatedText {
             margin-top: 20px;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            max-width: 600px;
-            overflow: auto;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <h1>Document Intelligence</h1>
-    
-    <form id="documentForm">
-        <label for="document">Choose a document:</label>
-        <input type="file" id="document" accept=".pdf, .docx, .pptx">
-        <button type="button" onclick="analyzeDocument()">Analyze Document</button>
-    </form>
+    <h1>Language Translator</h1>
 
-    <div id="result"></div>
+    <label for="sourceText">Enter Text (English):</label>
+    <textarea id="sourceText" placeholder="Type your text here..." rows="4"></textarea>
+
+    <label for="targetLanguage">Select Target Language:</label>
+    <select id="targetLanguage">
+        <option value="fr">French</option>
+        <option value="es">Spanish</option>
+        <option value="hi">Hindi</option>
+        <option value="bn">Bengali</option>
+        <option value="te">Telugu</option>
+        <option value="ta">Tamil</option>
+        <option value="mr">Marathi</option>
+        <!-- Add more language options as needed -->
+    </select>
+
+    <button onclick="translateText()">Translate</button>
+
+    <h2>Translated Text:</h2>
+    <div id="translatedText"></div>
 
     <script>
-        function analyzeDocument() {
-            const documentInput = document.getElementById('document');
-            const documentFile = documentInput.files[0];
+        function translateText() {
+            const sourceText = document.getElementById('sourceText').value;
+            const targetLanguage = document.getElementById('targetLanguage').value;
 
-            if (!documentFile) {
-                alert('Please choose a document.');
-                return;
-            }
+            const apiKey = '80ccdb015a584e7dbc96929710349e87';
+            const endpoint = 'https://api.cognitive.microsofttranslator.com';
 
-            const apiUrl = 'https://crt.cognitiveservices.azure.com/';
-            const apiKey = '1067a4d0fc074cf69ef033b5aa79fef5';
+            const apiUrl = `${endpoint}/translate?api-version=3.0&from=en&to=${targetLanguage}`;
 
-            const formData = new FormData();
-            formData.append('file', documentFile);
+            const headers = new Headers({
+                'Ocp-Apim-Subscription-Key': apiKey,
+                'Content-type': 'application/json',
+                'X-ClientTraceId': new Date().getTime().toString()
+            });
+
+            const body = JSON.stringify([{ 'text': sourceText }]);
 
             fetch(apiUrl, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/octet-stream',
-                    'Ocp-Apim-Subscription-Key': apiKey,
-                },
-                body: formData,
+                headers: headers,
+                body: body
             })
             .then(response => response.json())
             .then(data => {
-                const resultDiv = document.getElementById('result');
-                resultDiv.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+                const translatedText = data[0].translations[0].text;
+                document.getElementById('translatedText').innerText = translatedText;
             })
             .catch(error => {
                 console.error('Error:', error);

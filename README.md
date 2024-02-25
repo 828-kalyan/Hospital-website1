@@ -29,16 +29,16 @@ The user can learn about health information through the latest health blogs.
 
  📸
 
-
-![Screenshot 2023-11-08 000545](https://github.com/828-kalyan/Hospital-website1/assets/75324176/e9b6c6f5-55e1-4398-bfe4-e2b6a484b47c)
-
+![Screenshot 2023-11-08 000545](https://github.com/828-kalyan/Hospital-website1/assets/75324176/91e4d802-7e04-4b08-862b-3a095b88eed5)
    
+
 
 ### About Us:
 
 
 
-![image](https://github.com/828-kalyan/Hospital-website1/assets/75324176/d1478d72-6ac7-46ce-aa30-ac4be974b66a)
+
+![Screenshot 2023-11-08 000927](https://github.com/828-kalyan/Hospital-website1/assets/75324176/c757fece-caa9-404e-8d37-2137a11e20df)
 
 
 
@@ -52,7 +52,7 @@ The user can learn about health information through the latest health blogs.
 ### The medical history form:
 
 
-![Screenshot 2023-11-08 00072](https://github.com/828-kalyan/Hospital-website1/assets/75324176/f7e23e8f-b5ff-4d15-ab16-93102b00dfa7)
+![Screenshot 2023-11-08 00072](https://github.com/828-kalyan/Hospital-website1/assets/75324176/15956f47-5430-4963-a561-4cda307db063)
 
 
 ### Text Translator (Azure AI Service):

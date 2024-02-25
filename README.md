@@ -45,7 +45,8 @@ The user can learn about health information through the latest health blogs.
 ### services:
 
 
-![Screenshot 2023-11-08 00065](https://github.com/828-kalyan/Hospital-website1/assets/75324176/039a576e-b356-42c8-9fca-857aaed1f3ad)
+![Screenshot 2023-11-08 00065](
+![Screenshot 2023-11-08 00065](https://github.com/828-kalyan/Hospital-website1/assets/75324176/1e749ebd-0948-4e7b-9bab-05273bac9b2b)
 
 
 
